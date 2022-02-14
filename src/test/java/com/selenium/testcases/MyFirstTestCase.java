@@ -6,6 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.selenium.pages.CartPage;
+import com.selenium.pages.HomePage;
+import com.selenium.pages.StorePage;
 import com.selenium.pom.BaseTest;
 
 
@@ -17,17 +20,18 @@ public class MyFirstTestCase extends BaseTest {
 	@Test
 	public void guestCheckOut() throws InterruptedException {
 		driver.get("https://askomdch.com");
-		driver.findElement(By.xpath("//*[@id=\"menu-item-1227\"]/a")).click();
+		HomePage homepage=new HomePage(driver);
+		StorePage storePage=homepage.clickMenuStore();
+		Thread.sleep(3000);
+//		storePage.enterTextboxField("Blue");
+//		storePage.clicSearchBtn();
+		storePage.searchaProduct("Blue").clickAddToCartBtn(); //functional approach
+		Assert.assertEquals(storePage.getTitile(), "Search results: “Blue”");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id=\"woocommerce-product-search-field-0\"]")).sendKeys("Blue");
-		driver.findElement(By.xpath("//*[text()='Search']")).click();
-		Assert.assertEquals(
-				driver.findElement(By.xpath("//*[@class=\"woocommerce-products-header__title page-title\"]")).getText(),
-				"Search results: “Blue”");
-		driver.findElement(By.xpath("(//*[text()='Add to cart'])[1]")).click();
-		Thread.sleep(5000);
-		driver.findElement(By.cssSelector("a[title='View cart']")).click();
-		Assert.assertEquals(driver.findElement(By.xpath("//*[text()='Blue Shoes']")).getText(), "Blue Shoes");
+		CartPage cart=storePage.viewCart();
+		//storePage.clickAddToCartBtn();
+		Assert.assertEquals(cart.getProductName("Blue Shoes"), "Blue Shoes");
+		cart.checkoutClick();
 		driver.findElement(By.xpath("//*[@class='checkout-button button alt wc-forward']")).click();
 		driver.findElement(By.xpath("//*[@id='billing_first_name']")).sendKeys("Sufail");
 		driver.findElement(By.xpath("//*[@id='billing_last_name']")).sendKeys("S");
