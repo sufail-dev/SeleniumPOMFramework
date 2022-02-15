@@ -13,6 +13,10 @@ public class HomePage extends BasePage {
 		super(driver);
 		
 	}
+	public HomePage urlnavigate() {
+		loadUrl("https://askomdch.com");
+		return this;
+	}
 	
 	
 	public StorePage clickMenuStore() {

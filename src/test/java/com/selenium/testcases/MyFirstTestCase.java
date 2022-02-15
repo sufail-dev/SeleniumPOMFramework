@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.selenium.pages.CartPage;
+import com.selenium.pages.CheckOutPage;
 import com.selenium.pages.HomePage;
 import com.selenium.pages.StorePage;
 import com.selenium.pom.BaseTest;
@@ -19,35 +20,25 @@ public class MyFirstTestCase extends BaseTest {
 	
 	@Test
 	public void guestCheckOut() throws InterruptedException {
-		driver.get("https://askomdch.com");
-		HomePage homepage=new HomePage(driver);
+		HomePage homepage=new HomePage(driver).urlnavigate();
 		StorePage storePage=homepage.clickMenuStore();
 		Thread.sleep(3000);
-//		storePage.enterTextboxField("Blue");
-//		storePage.clicSearchBtn();
 		storePage.searchaProduct("Blue").clickAddToCartBtn(); //functional approach
 		Assert.assertEquals(storePage.getTitile(), "Search results: “Blue”");
 		Thread.sleep(2000);
 		CartPage cart=storePage.viewCart();
-		//storePage.clickAddToCartBtn();
 		Assert.assertEquals(cart.getProductName("Blue Shoes"), "Blue Shoes");
-		cart.checkoutClick();
-		driver.findElement(By.xpath("//*[@class='checkout-button button alt wc-forward']")).click();
-		driver.findElement(By.xpath("//*[@id='billing_first_name']")).sendKeys("Sufail");
-		driver.findElement(By.xpath("//*[@id='billing_last_name']")).sendKeys("S");
-		driver.findElement(By.xpath("//*[@id='billing_address_1']")).sendKeys("San Francisco");
-		driver.findElement(By.xpath("//*[@id='billing_city']")).sendKeys("Landro");
-		driver.findElement(By.xpath("//*[@id='billing_postcode']")).sendKeys("24627");
-		driver.findElement(By.xpath("//*[@id='billing_email']")).sendKeys("abc@gmail.com");
-		driver.findElement(By.xpath("//*[@id='place_order']")).click();
+		CheckOutPage checkOut=cart.checkoutClick();
+		checkOut.enterFirstName("Sufail").
+		enterLastName("S").
+		enterBillingAddress("San Francisco")
+		.enterBillingCity("Landro").
+		enterPostalCode("24627")
+		.enterBillingEmail("abc@gmail.com").
+		clickPlaceOrderButton();
 		Thread.sleep(5000);
-		Assert.assertEquals(driver.findElement(By.cssSelector(".woocommerce-notice")).getText(),
+		Assert.assertEquals(checkOut.getsuccessMessage(),
 				"Thank you. Your order has been received");
-		
-		
-		//driver.quit();
-		
-		
 	}
 	
 	
