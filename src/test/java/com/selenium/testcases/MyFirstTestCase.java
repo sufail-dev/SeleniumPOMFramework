@@ -22,21 +22,22 @@ public class MyFirstTestCase extends BaseTest {
 	public void guestCheckOut() throws InterruptedException {
 		HomePage homepage=new HomePage(driver).urlnavigate();
 		StorePage storePage=homepage.clickMenuStore();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		storePage.searchaProduct("Blue").clickAddToCartBtn(); //functional approach
 		Assert.assertEquals(storePage.getTitile(), "Search results: “Blue”");
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		CartPage cart=storePage.viewCart();
-		Assert.assertEquals(cart.getProductName("Blue Shoes"), "Blue Shoes");
+		Assert.assertEquals(cart.getProductName("Blue Shoes"), "Blue Shoes");                       
 		CheckOutPage checkOut=cart.checkoutClick();
 		checkOut.enterFirstName("Sufail").
 		enterLastName("S").
+//		.selectCountry("Spain").selectState("Albacete").
 		enterBillingAddress("San Francisco")
 		.enterBillingCity("Landro").
 		enterPostalCode("24627")
 		.enterBillingEmail("abc@gmail.com").
 		clickPlaceOrderButton();
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		Assert.assertEquals(checkOut.getsuccessMessage(),
 				"Thank you. Your order has been received");
 	}
