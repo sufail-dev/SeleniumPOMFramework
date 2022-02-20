@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test name="Test">
+  <test name="Chrome">
+  <parameter name="browser" value="Chrome"/>
+  	<!-- <packages>
+  		<package name="com.selenium.testcases"/>
+  	
+  	</packages>-->
+  
+  
+  
+  
+  
     <classes>
-      <class name="com.selenium.testcases.MyFirstTestCase">
+       <class name="com.selenium.testcases.MyFirstTestCase">
       <methods>
         <include name="guestCheckOut" />
         <exclude name="loginCheckout" />
@@ -11,4 +21,29 @@
       </class>
     </classes>
   </test> <!-- Test -->
+  
+  
+  
+  <test name="Firefox">
+  <parameter name="browser" value="Firefox"/>
+   <!--	<packages>
+  		<package name="com.selenium.testcases"/>
+  	
+  	</packages>-->
+  
+  
+  
+  
+  
+    <classes>
+       <class name="com.selenium.testcases.MyFirstTestCase">
+      <methods>
+        <include name="guestCheckOut" />
+        <exclude name="loginCheckout" />
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+  
+  
 </suite> <!-- Suite -->

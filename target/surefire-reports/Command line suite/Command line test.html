@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Feb 18 11:37:26 IST 2022</td>
+<td>Started on:</td><td>Sun Feb 20 09:57:42 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>43 seconds (43006 ms)</td>
+<tr><td>Total time:</td><td>58 seconds (58248 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -78,8 +78,8 @@ function toggleAllBoxes() {
 <td title='com.selenium.testcases.MyFirstTestCase.guestCheckOut()'><b>guestCheckOut</b><br>Test class: com.selenium.testcases.MyFirstTestCase</td>
 <td><div><pre>java.lang.AssertionError: expected [Thank you. Your order has been received] but found [Thank you. Your order has been received.]
 	at com.selenium.testcases.MyFirstTestCase.guestCheckOut(MyFirstTestCase.java:41)
-... Removed 41 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace302987494", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace302987494'><pre>java.lang.AssertionError: expected [Thank you. Your order has been received] but found [Thank you. Your order has been received.]
+... Removed 41 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1574509514", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1574509514'><pre>java.lang.AssertionError: expected [Thank you. Your order has been received] but found [Thank you. Your order has been received.]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
@@ -127,15 +127,14 @@ function toggleAllBoxes() {
 <td>com.selenium.testcases.MyFirstTestCase@6537cf78</td></tr>
 <tr>
 <td title='com.selenium.testcases.MyFirstTestCase.loginCheckout()'><b>loginCheckout</b><br>Test class: com.selenium.testcases.MyFirstTestCase</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+<td><div><pre>org.openqa.selenium.WebDriverException: chrome not reachable
   (Session info: chrome=98.0.4758.102)
 Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
-System info: host: &apos;DESKTOP-VEKRLTS&apos;, ip: &apos;192.168.1.10&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+System info: host: &apos;DESKTOP-VEKRLTS&apos;, ip: &apos;192.168.1.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d8b74ef5d7e3bae5304705b55f191e5e, sendKeysToElement {id=9a695e5d-ffc1-414e-9cf9-eb7500c0e295, value=[Ljava.lang.CharSequence;@412c995d}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\USER\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:13314}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:13314/devtoo..., se:cdpVersion: 98.0.4758.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (d8b74ef5d7e3bae5304705b55f191e5e)] -&gt; xpath: //*[@id=&apos;username&apos;]]
-Session ID: d8b74ef5d7e3bae5304705b55f191e5e
+Command: [bb4e653096d020c2f9a574b412bfd957, findElement {using=xpath, value=//*[@id=&apos;billing_first_name&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\USER\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:1826}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:1826/devtool..., se:cdpVersion: 98.0.4758.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: bb4e653096d020c2f9a574b412bfd957
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -143,19 +142,20 @@ Session ID: d8b74ef5d7e3bae5304705b55f191e5e
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:107)
-	at com.selenium.testcases.MyFirstTestCase.loginCheckout(MyFirstTestCase.java:67)
-... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace778337881", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace778337881'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:382)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at com.selenium.testcases.MyFirstTestCase.loginCheckout(MyFirstTestCase.java:72)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace898695324", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace898695324'><pre>org.openqa.selenium.WebDriverException: chrome not reachable
   (Session info: chrome=98.0.4758.102)
 Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
-System info: host: &apos;DESKTOP-VEKRLTS&apos;, ip: &apos;192.168.1.10&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+System info: host: &apos;DESKTOP-VEKRLTS&apos;, ip: &apos;192.168.1.2&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d8b74ef5d7e3bae5304705b55f191e5e, sendKeysToElement {id=9a695e5d-ffc1-414e-9cf9-eb7500c0e295, value=[Ljava.lang.CharSequence;@412c995d}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\USER\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:13314}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:13314/devtoo..., se:cdpVersion: 98.0.4758.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (d8b74ef5d7e3bae5304705b55f191e5e)] -&gt; xpath: //*[@id=&apos;username&apos;]]
-Session ID: d8b74ef5d7e3bae5304705b55f191e5e
+Command: [bb4e653096d020c2f9a574b412bfd957, findElement {using=xpath, value=//*[@id=&apos;billing_first_name&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: C:\Users\USER\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:1826}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:1826/devtool..., se:cdpVersion: 98.0.4758.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: bb4e653096d020c2f9a574b412bfd957
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -167,9 +167,11 @@ Session ID: d8b74ef5d7e3bae5304705b55f191e5e
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:107)
-	at com.selenium.testcases.MyFirstTestCase.loginCheckout(MyFirstTestCase.java:67)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:382)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at com.selenium.testcases.MyFirstTestCase.loginCheckout(MyFirstTestCase.java:72)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -206,7 +208,7 @@ Session ID: d8b74ef5d7e3bae5304705b55f191e5e
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </pre></div></td>
-<td>21</td>
+<td>39</td>
 <td>com.selenium.testcases.MyFirstTestCase@6537cf78</td></tr>
 </table><p>
 </body>
