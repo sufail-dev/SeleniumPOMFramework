@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite (0)]">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
   <test name="Chrome(failed)">
-    <parameter name="browser" value="Firefox"/>
+    <parameter name="browser" value="Chrome"/>
     <classes>
       <class name="com.selenium.testcases.MyFirstTestCase">
         <methods>
           <include name="guestCheckOut"/>
           <include name="driverStart"/>
           <include name="driverStart"/>
+          <include name="driverQuit"/>
         </methods>
       </class> <!-- com.selenium.testcases.MyFirstTestCase -->
     </classes>
@@ -21,8 +22,9 @@
           <include name="guestCheckOut"/>
           <include name="driverStart"/>
           <include name="driverStart"/>
+          <include name="driverQuit"/>
         </methods>
       </class> <!-- com.selenium.testcases.MyFirstTestCase -->
     </classes>
   </test> <!-- Firefox(failed) -->
-</suite> <!-- Failed suite [Suite (0)] -->
+</suite> <!-- Failed suite [Suite] -->
