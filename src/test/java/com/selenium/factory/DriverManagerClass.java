@@ -13,8 +13,8 @@ public class DriverManagerClass {
 	public WebDriver initializDriver(String browser) {
 		
 		//String browserName=System.getProperty("browser",browser);
-		String browserName=browser;
-		switch(browserName) {
+		//String browserName=browser;
+		switch(browser) {
 		case "Chrome":
 			System.setProperty("webdriver.chrome.driver", "F:\\chromedriverexe\\chromedriver.exe");
 			driver=new ChromeDriver();
@@ -23,7 +23,7 @@ public class DriverManagerClass {
 			System.out.println("firefox going to exceute");
 			break;
 			default: 
-				throw new IllegalStateException("invalid browser name: "+browserName);
+				throw new IllegalStateException("invalid browser name: "+browser);
 		}
 		
 		

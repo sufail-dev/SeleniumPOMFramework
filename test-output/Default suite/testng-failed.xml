@@ -6,6 +6,7 @@
       <class name="com.selenium.testcases.MyFirstTestCase">
         <methods>
           <include name="guestCheckOut"/>
+          <include name="loginCheckout"/>
         </methods>
       </class> <!-- com.selenium.testcases.MyFirstTestCase -->
     </classes>

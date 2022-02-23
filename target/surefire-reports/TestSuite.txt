@@ -1,17 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 4, Errors: 0, Skipped: 6, Time elapsed: 66.249 s <<< FAILURE! - in TestSuite
-com.selenium.testcases.MyFirstTestCase.guestCheckOut  Time elapsed: 49.497 s  <<< FAILURE!
-java.lang.AssertionError: expected [Thank you. Your order has been received] but found [Thank you. Your order has been received.]
-	at com.selenium.testcases.MyFirstTestCase.guestCheckOut(MyFirstTestCase.java:41)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 5, Time elapsed: 1.316 s <<< FAILURE! - in TestSuite
+com.selenium.testcases.MyFirstTestCase.driverStart  Time elapsed: 1.07 s  <<< FAILURE!
+org.testng.TestNGException: 
 
-com.selenium.testcases.MyFirstTestCase.driverStart[Firefox](0)  Time elapsed: 51.757 s  <<< FAILURE!
-java.lang.NullPointerException
-
-com.selenium.testcases.MyFirstTestCase.driverStart[Firefox](0)  Time elapsed: 0.096 s  <<< FAILURE!
-java.lang.NullPointerException
-
-com.selenium.testcases.MyFirstTestCase.driverStart[Firefox](0)  Time elapsed: 0.005 s  <<< FAILURE!
-java.lang.NullPointerException
+Can inject only one of <ITestContext, XmlTest, Method, Object[]> into a BeforeMethod annotated driverStart.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
 

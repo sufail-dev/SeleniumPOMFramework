@@ -10,18 +10,29 @@ import org.testng.annotations.Parameters;
 import com.selenium.factory.DriverManagerClass;
 
 public class BaseTest {
-	protected WebDriver driver;
+	private ThreadLocal<WebDriver> driver=new ThreadLocal<>();
+	
+	public void setDriver(WebDriver driver) {
+		this.driver.set(driver);
+	}
+	
+	public WebDriver getDriver() {
+		return this.driver.get();
+	}
 	
 	@Parameters("browser")
 	@BeforeMethod
 	public void driverStart(String browser)
 	{
-		driver=new DriverManagerClass().initializDriver( browser);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
+		browser=System.getProperty("browser");
+		setDriver(new DriverManagerClass().initializDriver( browser));
+//		driver=new DriverManagerClass().initializDriver( browser);
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 	}
 	
 	@AfterMethod
-	public void driverQuit() {
-		driver.quit();
+	public void driverQuit() throws InterruptedException {
+		Thread.sleep(100);
+		getDriver().quit();
 	}
 }

@@ -20,7 +20,7 @@ public class MyFirstTestCase extends BaseTest {
 	
 	@Test
 	public void guestCheckOut() throws InterruptedException {
-		HomePage homepage=new HomePage(driver).urlnavigate();
+		HomePage homepage=new HomePage(getDriver()).urlnavigate();
 		StorePage storePage=homepage.clickMenuStore();
 		//Thread.sleep(3000);
 		storePage.searchaProduct("Blue").clickAddToCartBtn(); //functional approach
