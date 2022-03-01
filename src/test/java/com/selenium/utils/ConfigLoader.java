@@ -12,7 +12,7 @@ public class ConfigLoader {
 	}
 	
 	
-	public ConfigLoader getInstance() throws IOException {
+	public static ConfigLoader getInstance() throws IOException {
 		if(config==null) {
 			config=new ConfigLoader();
 		}

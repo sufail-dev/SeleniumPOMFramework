@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.selenium.pom.BasePage;
+import com.selenium.utils.ConfigLoader;
 
 public class CartPage extends BasePage {
 	
