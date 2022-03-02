@@ -1,5 +1,7 @@
 package com.selenium.testcases;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,7 +21,7 @@ public class MyFirstTestCase extends BaseTest {
 	
 	
 	@Test
-	public void guestCheckOut() throws InterruptedException {
+	public void guestCheckOut() throws InterruptedException, IOException {
 		HomePage homepage=new HomePage(getDriver()).urlnavigate();
 		StorePage storePage=homepage.clickMenuStore();
 		//Thread.sleep(3000);
